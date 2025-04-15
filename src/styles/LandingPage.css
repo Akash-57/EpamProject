@@ -1,0 +1,98 @@
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(120deg, #a1c4fd, #c2e9fb); /* Initial gradient */
+    background-size: 400% 400%; /* For smooth animation */
+    animation: gradientAnimation 15s ease infinite; /* Gradient animation */
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.landing-header {
+    background-color: rgba(52, 152, 219, 0.9); /* Semi-transparent blue */
+    color: white;
+    padding: 1.5rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+}
+
+.landing-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.landing-main h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.landing-main p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #7f8c8d;
+}
+
+.landing-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth button hover effect */
+}
+
+.btn-primary,
+.btn-secondary {
+    background-color: #3498db; /* Blue color for buttons */
+    color: white;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.landing-footer {
+    background-color: rgba(241, 241, 241, 0.9); /* Semi-transparent footer */
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
+}
+.quotation {
+  font-family: 'Georgia', serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #2c3e50;
+  text-align: center;
+  margin: 30px auto;
+  max-width: 800px;
+  line-height: 1.6;
+  padding: 0 20px;
+}
