@@ -15,7 +15,7 @@ const ResourceAllocation = () => {
   const [selectedResource, setSelectedResource] = useState("");
   const [allocationQuantity, setAllocationQuantity] = useState(1);
 
-  // Load data from localStorage on component mount
+ 
   useEffect(() => {
     const storedResources = JSON.parse(localStorage.getItem("resources"));
     const storedAllocations = JSON.parse(localStorage.getItem("allocatedResources"));
@@ -24,7 +24,7 @@ const ResourceAllocation = () => {
     if (storedAllocations) setAllocatedResources(storedAllocations);
   }, []);
 
-  // Save resources and allocations to localStorage whenever they change
+
   useEffect(() => {
     localStorage.setItem("resources", JSON.stringify(resources));
     localStorage.setItem("allocatedResources", JSON.stringify(allocatedResources));
@@ -45,11 +45,11 @@ const ResourceAllocation = () => {
       return;
     }
 
-    // Deduct the allocated quantity from the available resources
+   
     const updatedResources = [...resources];
     updatedResources[resourceIndex].quantity -= allocationQuantity;
 
-    // Create a new allocation entry
+  
     const newAllocation = {
       effectedBy,
       location,
@@ -57,11 +57,11 @@ const ResourceAllocation = () => {
       quantity: allocationQuantity,
     };
 
-    // Update state and localStorage
+   
     setResources(updatedResources);
     setAllocatedResources([...allocatedResources, newAllocation]);
 
-    // Reset form fields
+ 
     setEffectedBy("");
     setLocation("");
     setSelectedResource("");
@@ -73,7 +73,7 @@ const ResourceAllocation = () => {
     const updatedAllocations = [...allocatedResources];
     updatedAllocations.splice(index, 1);
 
-    // Restore the allocated quantity back to the available resources
+
     const resourceIndex = resources.findIndex(
       (resource) => resource.name === allocationToDelete.resource
     );
@@ -84,7 +84,6 @@ const ResourceAllocation = () => {
       setResources(updatedResources);
     }
 
-    // Update state and localStorage
     setAllocatedResources(updatedAllocations);
   };
 

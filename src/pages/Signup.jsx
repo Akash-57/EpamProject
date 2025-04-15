@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/Signup.css"; // Import the new CSS file
-
+import "../styles/Signup.css";
 const Signup = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -24,7 +23,7 @@ const Signup = () => {
       }
     }
 
-    // Save the new user to localStorage
+    
     localStorage.setItem("user", JSON.stringify({ username, password }));
     navigate("/login");
   };

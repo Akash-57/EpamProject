@@ -5,11 +5,11 @@ import "../styles/Home.css";
 const Home = () => {
   const navigate = useNavigate();
 
-  // Check if the user is authenticated
+
   const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
 
   React.useEffect(() => {
-    // Redirect to login if the user is not authenticated
+ 
     if (!isAuthenticated) {
       navigate("/login");
     }

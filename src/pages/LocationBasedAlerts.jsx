@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import "../styles/LocationBasedAlerts.css";
 
 const disasterZones = [
-  { id: 1, name: "Flood Zone - Riverbank", lat: 28.7041, lng: 77.1025, radius: 20 }, // in kilometers
+  { id: 1, name: "Flood Zone - Riverbank", lat: 28.7041, lng: 77.1025, radius: 20 }, 
   { id: 2, name: "Fire Zone - Forest Edge", lat: 19.076, lng: 72.8777, radius: 15 }
 ];
 
@@ -24,7 +24,7 @@ const LocationBasedAlerts = () => {
             lng: position.coords.longitude
           };
           setUserLocation(loc);
-          localStorage.setItem("userLocation", JSON.stringify(loc)); // Save location to local storage
+          localStorage.setItem("userLocation", JSON.stringify(loc)); 
           checkNearbyDisasters(loc);
         },
         (error) => {
@@ -48,9 +48,9 @@ const LocationBasedAlerts = () => {
     setAlerts(triggeredAlerts);
   };
 
-  // Haversine formula to calculate distance between two coordinates
+
   const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
-    const R = 6371; // Radius of earth in km
+    const R = 6371; 
     const dLat = ((lat2 - lat1) * Math.PI) / 180;
     const dLon = ((lon2 - lon1) * Math.PI) / 180;
     const a =
@@ -60,7 +60,7 @@ const LocationBasedAlerts = () => {
         Math.sin(dLon / 2) *
         Math.sin(dLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return R * c; // Distance in km
+    return R * c; 
   };
 
   return (

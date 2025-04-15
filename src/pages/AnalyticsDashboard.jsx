@@ -11,12 +11,12 @@ const AnalyticsDashboard = () => {
   });
 
   const updateMetrics = () => {
-    // Fetch data from localStorage
+
     const incidents = JSON.parse(localStorage.getItem("incidents")) || [];
     const allocatedResources = JSON.parse(localStorage.getItem("allocatedResources")) || [];
     const volunteers = JSON.parse(localStorage.getItem("volunteers")) || [];
 
-    // Calculate metrics
+
     const incidentsReported = incidents.length;
     const resourcesAllocated = allocatedResources.reduce(
       (total, allocation) => total + allocation.quantity,
@@ -25,7 +25,7 @@ const AnalyticsDashboard = () => {
     const activeVolunteers = volunteers.length;
     const areasAffected = new Set(incidents.map((incident) => incident.location)).size;
 
-    // Update metrics state
+  
     setMetrics({
       incidentsReported,
       resourcesAllocated,
@@ -35,17 +35,17 @@ const AnalyticsDashboard = () => {
   };
 
   useEffect(() => {
-    // Update metrics on component mount
+   
     updateMetrics();
 
-    // Add an event listener to listen for changes in localStorage
+
     const handleStorageChange = () => {
       updateMetrics();
     };
 
     window.addEventListener("storage", handleStorageChange);
 
-    // Cleanup event listener on component unmount
+
     return () => {
       window.removeEventListener("storage", handleStorageChange);
     };

@@ -12,7 +12,7 @@ const Volunteers = () => {
   });
 
   useEffect(() => {
-    // Load volunteers from localStorage on component mount
+  
     const storedVolunteers = JSON.parse(localStorage.getItem("volunteers")) || [];
     setVolunteers(storedVolunteers);
   }, []);
@@ -34,7 +34,7 @@ const Volunteers = () => {
     const updatedVolunteers = [...volunteers, formData];
     setVolunteers(updatedVolunteers);
 
-    // Save updated volunteers to localStorage
+    
     localStorage.setItem("volunteers", JSON.stringify(updatedVolunteers));
 
     setFormData({
@@ -51,7 +51,6 @@ const Volunteers = () => {
     updatedVolunteers.splice(index, 1);
     setVolunteers(updatedVolunteers);
 
-    // Update localStorage after deletion
     localStorage.setItem("volunteers", JSON.stringify(updatedVolunteers));
   };
 

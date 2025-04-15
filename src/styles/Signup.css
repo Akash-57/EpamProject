@@ -3,13 +3,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(120deg, #89f7fe, #66a6ff); /* Peaceful gradient */
-    background-size: 400% 400%; /* For smooth animation */
-    animation: gradientAnimation 15s ease infinite; /* Gradient animation */
-    padding: 1rem; /* Add padding for smaller screens */
+    background: linear-gradient(120deg, #89f7fe, #66a6ff); 
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite; 
+    padding: 1rem; 
 }
 
-/* Gradient animation */
+
 @keyframes gradientAnimation {
     0% {
         background-position: 0% 50%;
@@ -23,20 +23,20 @@
 }
 
 .card {
-    border-radius: 10px; /* Rounded corners for the card */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for the card */
-    background-color: white; /* Ensure the card has a white background */
-    border: 3px solid black; /* Bold black border for the card */
+    border-radius: 10px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    background-color: white; 
+    border: 3px solid black; 
 }
 
 .btn-primary {
-    background-color: #3498db; /* Blue color for the button */
+    background-color: #3498db;
     border: none;
     transition: background-color 0.3s ease, transform 0.2s ease;
     color: white;
 }
 
 .btn-primary:hover {
-    background-color: #2980b9; /* Darker blue on hover */
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    background-color: #2980b9; 
+    transform: scale(1.05);
 }

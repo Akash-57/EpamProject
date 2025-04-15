@@ -19,7 +19,7 @@ const IncidentReports = () => {
     reportedOn: "",
   });
 
-  // Default disaster types
+
   const disasterTypes = [
     "Flood",
     "Earthquake",
@@ -90,13 +90,13 @@ const IncidentReports = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (currentIncident) {
-      // Update existing incident
+   
       const updatedIncidents = incidents.map((incident) =>
         incident.id === currentIncident.id ? { ...formData } : incident
       );
       saveIncidentsToStorage(updatedIncidents);
     } else {
-      // Add new incident
+    
       const newIncident = {
         ...formData,
         id: Date.now(),
